@@ -2,7 +2,7 @@
 
 Personal developer portfolio showcasing full-stack applications, OSINT tools, systems engineering, and creative design.
 
-- **Live URL:** [https://shafaqirshad.vercel.app](https://shafaqirshad.vercel.app)
+- **Live URL:** [https://shafaq.vercel.app](https://shafaq.vercel.app) (Mirror: [https://shafaqirshad.vercel.app](https://shafaqirshad.vercel.app))
 - **GitHub:** [https://github.com/Shafaq-codes](https://github.com/Shafaq-codes)
 - **Contact:** `shafaqueries@gmail.com`
 
