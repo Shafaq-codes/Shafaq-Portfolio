@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   localStorage.setItem('theme', 'dark');
   initPreloader();
   initCopyEmail();
+  initEmailButton();
   initContactForm();
   initCapsuleScrollInteraction();
   initActiveNavHighlight();
@@ -197,6 +198,35 @@ function initCopyEmail() {
       }
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   4b. Direct Email Compose Action
+   -------------------------------------------------------------------------- */
+function initEmailButton() {
+  const emailLink = document.getElementById('socialEmailLink');
+  if (!emailLink) return;
+
+  const targetEmail = 'shafaqueries@gmail.com';
+  const mailSubject = 'Project Inquiry — Shafaq Irshad';
+  const gmailUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + targetEmail + '&su=' + encodeURIComponent(mailSubject);
+  const mailtoUrl = 'mailto:' + targetEmail + '?subject=' + encodeURIComponent(mailSubject);
+
+  emailLink.addEventListener('click', (e) => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(targetEmail).catch(() => {});
+    }
+
+    if (isMobile) {
+      e.preventDefault();
+      window.location.href = mailtoUrl;
+    } else {
+      e.preventDefault();
+      window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+    }
+  });
 }
 
 /* --------------------------------------------------------------------------
