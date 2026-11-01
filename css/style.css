@@ -998,7 +998,7 @@ img, video {
    -------------------------------------------------------------------------- */
 .horizontal-works-section {
   position: relative;
-  height: 550vh; /* Smooth scroll track duration */
+  height: 620vh; /* Smooth scroll track duration */
   background: var(--bg-primary);
   z-index: 10;
 }

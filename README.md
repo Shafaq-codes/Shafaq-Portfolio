@@ -16,3 +16,4 @@ Personal developer portfolio showcasing full-stack applications, OSINT tools, sy
 - **AI Calling Agent:** Autonomous voice AI calling agent with custom conversational training.
 - **OSINT Search Platform:** Cyber intelligence research interface for investigative workflows.
 - **JARVIS Extension:** Tony Stark-inspired browser extension delivering contextual conversational AI responses with custom persona feedback.
+- **3D Cozy Room:** Immersive 3D interactive ambient relaxation space with real-time lighting and tranquil soundscapes.
