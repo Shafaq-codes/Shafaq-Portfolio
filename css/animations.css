@@ -1,7 +1,7 @@
 /* ===== Motion layer: animations.css ===== */
-.m-prog{position:fixed;top:0;left:0;width:100%;height:3px;z-index:9999;transform-origin:0 50%;scale:0 1;background:linear-gradient(90deg,#e63946,#f1f5f9,#ff6b6b);box-shadow:0 0 12px #e63946}
+.m-prog{position:fixed;top:0;left:0;width:100%;height:3px;z-index:9999;transform-origin:0 50%;scale:0 1;background:linear-gradient(90deg,#e5132b,#ff3d5a,#d9b46a);box-shadow:0 0 12px #e5132b}
 .m-canvas{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.32}
-.m-glow{position:fixed;left:0;top:0;width:400px;height:400px;z-index:1;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(230, 57, 70,.16),rgba(241, 245, 249,.08) 45%,transparent 70%);mix-blend-mode:screen;opacity:.45}
+.m-glow{position:fixed;left:0;top:0;width:400px;height:400px;z-index:1;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(229,19,43,.16),rgba(217,180,106,.08) 45%,transparent 70%);mix-blend-mode:screen;opacity:.45}
 
 /* background */
 .ambient-glow{animation:glowDrift 16s ease-in-out infinite alternate}
@@ -11,11 +11,11 @@
 
 /* header */
 .top-editorial-bar{transition:translate .45s cubic-bezier(.2,.8,.2,1),background .3s,backdrop-filter .3s}
-.top-editorial-bar.m-scrolled{backdrop-filter:blur(14px);background:rgba(10,12,16,.6)}
+.top-editorial-bar.m-scrolled{backdrop-filter:blur(14px);background:rgba(7,7,10,.82)}
 .brand-dot{animation:pulse 2s ease-in-out infinite}
 .status-dot{animation:ping 1.8s ease-out infinite}
 @keyframes pulse{50%{scale:1.6;opacity:.6}}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(230, 57, 70,.7)}100%{box-shadow:0 0 0 12px rgba(230, 57, 70,0)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(70,227,168,.7)}100%{box-shadow:0 0 0 12px rgba(70,227,168,0)}}
 
 /* hero entrance (starts after preloader) */
 html.m-js:not(.m-ready) .hero-line,html.m-js:not(.m-ready) .hero-lead-text,html.m-js:not(.m-ready) .hero-actions{opacity:0}
@@ -32,10 +32,10 @@ html.m-js:not(.m-ready) .hero-line,html.m-js:not(.m-ready) .hero-lead-text,html.
 /* scroll reveal + tilt + spotlight */
 .rv{opacity:0;translate:0 46px;filter:blur(8px);transition:opacity .9s,translate .9s cubic-bezier(.2,.8,.2,1),filter .9s,transform .18s ease-out;transition-delay:var(--d,0s)}
 .rv.in{opacity:1;translate:0 0;filter:none}
-.m-spot{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(230, 57, 70,.2),transparent 45%)}
+.m-spot{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(229,19,43,.2),transparent 45%)}
 .rv:hover>.m-spot{opacity:1}
 .tech-tag{animation:bob 4s ease-in-out infinite;animation-delay:calc(var(--i,0)*.25s);transition:.25s}
-.tech-tag:hover{translate:0 -4px;scale:1.08;border-color:#e63946}
+.tech-tag:hover{translate:0 -4px;scale:1.08;border-color:#e5132b}
 @keyframes bob{50%{translate:0 -4px}}
 .skill-card-icon{animation:float 5s ease-in-out infinite}
 @keyframes float{50%{translate:0 -8px;rotate:4deg}}
@@ -48,21 +48,21 @@ html.m-js:not(.m-ready) .hero-line,html.m-js:not(.m-ready) .hero-lead-text,html.
 @keyframes frameFloat{50%{translate:0 -10px}}
 .mockup-header-dots .dot{animation:blink 2.4s infinite}
 .mockup-header-dots .dot.yellow{animation-delay:.3s}.mockup-header-dots .dot.green{animation-delay:.6s}
-.slide-tag{transition:.25s}.slide-tag:hover{translate:0 -3px;background:rgba(230, 57, 70,.15)}
-.slide-project-title{background:linear-gradient(90deg,#fff,#e63946,#f1f5f9,#fff);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
-@keyframes shine{to{background-position:-250% 0}}
+.slide-tag{transition:.25s}.slide-tag:hover{translate:0 -3px;background:rgba(229,19,43,.15)}
+.slide-project-title{background:linear-gradient(90deg,#f4f1ec 0% 40%,#ff8a9a 50%,#f4f1ec 60% 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
 
 /* contact */
-.copy-email-box{transition:.3s}.copy-email-box:hover{box-shadow:0 0 0 1px #e63946,0 0 28px rgba(230, 57, 70,.3)}
+.copy-email-box{transition:.3s}.copy-email-box:hover{box-shadow:0 0 0 1px #e5132b,0 0 28px rgba(229,19,43,.3)}
 .form-submit-btn i{transition:.4s}.form-submit-btn:hover i{translate:6px -6px;rotate:20deg}
 .footer-brand{animation:shine 8s linear infinite}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.rv{opacity:1;translate:0 0;filter:none}}
 
-/* ===== New logo ===== */
+/* ===== Brand logo mark ===== */
 .brand-logo-link{display:inline-flex;align-items:center;gap:12px}
-.brand-mark{width:44px;height:44px;flex:none;overflow:visible;filter:drop-shadow(0 0 6px rgba(230, 57, 70,.35));transition:filter .4s,rotate .6s cubic-bezier(.2,.8,.2,1)}
-.brand-logo-link:hover .brand-mark{filter:drop-shadow(0 0 14px rgba(241, 245, 249,.8));rotate:-8deg}
+.brand-mark{width:44px;height:44px;flex:none;overflow:visible;filter:drop-shadow(0 0 6px rgba(229,19,43,.35));transition:filter .4s,rotate .6s cubic-bezier(.2,.8,.2,1)}
+.brand-logo-link:hover .brand-mark{filter:drop-shadow(0 0 14px rgba(217,180,106,.8));rotate:-8deg}
 .bm-hex{stroke-dasharray:1;stroke-dashoffset:0;transform-box:fill-box;transform-origin:center;transition:scale .4s}
 .brand-logo-link:hover .bm-hex{scale:1.07}
 .m-js:not(.m-ready) .bm-hex{stroke-dashoffset:1}
@@ -71,7 +71,7 @@ html.m-js:not(.m-ready) .hero-line,html.m-js:not(.m-ready) .hero-lead-text,html.
 .bm-dot{animation:bmPulse 2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
 @keyframes bmPulse{50%{scale:1.5;opacity:.7}}
 .brand-word{display:flex;flex-direction:column;line-height:1.1}
-.brand-word b{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.2em;color:var(--text-primary,#fff)}
+.brand-word b{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.2em;color:var(--text-primary,#f4f1ec)}
 .brand-word small{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.14em;opacity:.55;margin-top:3px}
 @media (max-width:640px){.brand-word{display:none}}
 
@@ -79,25 +79,24 @@ html.m-js:not(.m-ready) .hero-line,html.m-js:not(.m-ready) .hero-lead-text,html.
 .project-slide-card,.project-slide-card *{cursor:pointer}
 @keyframes blink{50%{opacity:0}}
 
-/* ===== NEW: Section heading underline reveal ===== */
+/* ===== Section heading underline reveal ===== */
 .section-title{position:relative;display:inline-block}
-.section-title::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:linear-gradient(90deg,#e63946,#f1f5f9);border-radius:2px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.section-title::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:linear-gradient(90deg,#e5132b,#d9b46a);border-radius:2px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
 .rv.in .section-title::after{width:100%}
 
-/* ===== NEW: Card entrance stagger animation ===== */
+/* ===== Card entrance stagger animation ===== */
 @keyframes cardSlideIn{from{opacity:0;translate:0 40px;scale:.96}to{opacity:1;translate:0 0;scale:1}}
 .project-slide-card{animation:cardSlideIn .7s cubic-bezier(.2,.8,.2,1) both}
 .project-slide-card:nth-child(1){animation-delay:.1s}
 .project-slide-card:nth-child(2){animation-delay:.22s}
 .project-slide-card:nth-child(3){animation-delay:.34s}
 
-/* ===== NEW: Button ripple effect ===== */
+/* ===== Button ripple effect ===== */
 .ct-send,.ap-link,.all-proj-btn,.ap-back{position:relative;overflow:hidden}
 .ct-send::before,.ap-link::before,.all-proj-btn::before,.ap-back::before{content:"";position:absolute;top:50%;left:50%;width:0;height:0;background:rgba(255,255,255,.25);border-radius:50%;transform:translate(-50%,-50%);transition:width .5s ease,height .5s ease,opacity .5s ease;opacity:0}
 .ct-send:active::before,.ap-link:active::before,.all-proj-btn:active::before,.ap-back:active::before{width:300px;height:300px;opacity:0}
 
-
-/* ===== NEW: Hero shimmer — subtle red glow on oval underline ===== */
-.hand-drawn-oval path{stroke:#e63946;filter:drop-shadow(0 0 6px rgba(230,57,70,0.6))}
-@keyframes heroShimmer{0%,100%{opacity:0.7}50%{opacity:1;filter:drop-shadow(0 0 10px rgba(230,57,70,0.9))}}
+/* ===== Hero shimmer — subtle crimson glow on oval underline ===== */
+.hand-drawn-oval path{stroke:#e5132b;filter:drop-shadow(0 0 6px rgba(229,19,43,0.6))}
+@keyframes heroShimmer{0%,100%{opacity:0.7}50%{opacity:1;filter:drop-shadow(0 0 10px rgba(229,19,43,0.9))}}
 .m-ready .hand-drawn-oval path{animation:draw 1.6s 1.4s ease forwards,heroShimmer 3s 3s ease-in-out infinite}

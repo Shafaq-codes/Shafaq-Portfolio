@@ -1,3 +1,5 @@
 /* ===== About: story ===== */
-.about-story{margin:0 0 16px;max-width:640px;color:var(--text-secondary,#9ca3af);font-size:1.02rem;line-height:1.75}
-.about-story strong{color:#fff;font-weight:700;background:linear-gradient(90deg,#e63946,#f1f5f9);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.about-tag{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:clamp(0.95rem,1.4vw,1.25rem);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f4f1ec;line-height:1.2}
+.about-tag-prefix{color:#e5132b;font-weight:800;opacity:.95;text-shadow:0 0 14px rgba(229,19,43,.55)}
+.about-story{margin:0 0 16px;max-width:640px;color:var(--text-secondary,#a7a6ad);font-size:1.02rem;line-height:1.75}
+.about-story strong{color:#f4f1ec;font-weight:700;background:linear-gradient(90deg,#e5132b,#ff3d5a);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}

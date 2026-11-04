@@ -216,7 +216,7 @@
       "link": "https://3d-room-black.vercel.app"
     }
   ];
-  const COLORS = ['#e63946', '#f1f5f9', '#ff6b6b', '#ffd6d9', '#c1121f', '#ffffff', '#ff4d5e', '#ffe4e6', '#e63946', '#f1f5f9', '#ff6b6b', '#c1121f'];
+  const COLORS = ['#e5132b', '#ff3d5a', '#d9b46a', '#46e3a8', '#f4f1ec', '#ff6b81', '#e5132b', '#d9b46a', '#ff3d5a', '#46e3a8', '#f4f1ec', '#ff3d5a'];
   const FILTERS = [['all', 'All'], ['web', 'Web'], ['python', 'Python'], ['ai', 'AI'], ['osint', 'OSINT'], ['3d', '3D']];
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const root = document.createElement('div');

@@ -30,16 +30,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <!-- Stylesheet & Favicon -->
-  <link rel="stylesheet" href="./css/style.css?v=9" />
-  <link rel="stylesheet" href="./css/animations.css?v=4" />
-  <link rel="stylesheet" href="./css/stack.css?v=4" />
-  <link rel="stylesheet" href="./css/highlights.css?v=5" />
-  <link rel="stylesheet" href="./css/contact.css?v=3" />
-  <link rel="stylesheet" href="./css/preloader-visuals.css?v=1" />
-  <link rel="stylesheet" href="./css/nav.css?v=7" />
-  <link rel="stylesheet" href="./css/allprojects.css?v=5" />
-  <link rel="stylesheet" href="./css/process.css?v=3" />
-  <link rel="stylesheet" href="./css/about.css?v=3" />
+  <link rel="stylesheet" href="./css/style.css?v=10" />
+  <link rel="stylesheet" href="./css/animations.css?v=5" />
+  <link rel="stylesheet" href="./css/stack.css?v=5" />
+  <link rel="stylesheet" href="./css/highlights.css?v=6" />
+  <link rel="stylesheet" href="./css/contact.css?v=4" />
+  <link rel="stylesheet" href="./css/preloader-visuals.css?v=2" />
+  <link rel="stylesheet" href="./css/nav.css?v=8" />
+  <link rel="stylesheet" href="./css/allprojects.css?v=6" />
+  <link rel="stylesheet" href="./css/process.css?v=4" />
+  <link rel="stylesheet" href="./css/about.css?v=4" />
   <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
 </head>
 
@@ -82,44 +82,84 @@
   <header class="top-editorial-bar">
     <a href="#home" class="brand-logo-link" aria-label="Shafaq Irshad — Home">
       <div class="brand-emblem">
-        <svg class="brand-emblem-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg class="brand-emblem-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
-            <!-- Border Gradient: White specular shine on top-left to pure red -->
-            <linearGradient id="neonRimShine" x1="4" y1="2" x2="40" y2="42" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="18%" stop-color="#ff7a90" />
-              <stop offset="42%" stop-color="#ff1e42" />
-              <stop offset="100%" stop-color="#b80020" />
+            <!-- Neon Outer Aura Filter for Red Box -->
+            <filter id="neonBoxBloom" x="-35%" y="-35%" width="170%" height="170%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6.5" result="blur2" />
+              <feColorMatrix in="blur2" type="matrix" values="1 0 0 0 1  0 0 0 0 0.08  0 0 0 0 0.18  0 0 0 0.9 0" result="bloom" />
+              <feMerge>
+                <feMergeNode in="bloom" />
+                <feMergeNode in="blur1" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+
+            <!-- Soft Backlight inside Box -->
+            <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ff1939" stop-opacity="0.6" />
+              <stop offset="55%" stop-color="#e5132b" stop-opacity="0.22" />
+              <stop offset="100%" stop-color="#020204" stop-opacity="0" />
+            </radialGradient>
+
+            <!-- Top-Left Corner Specular White Glint -->
+            <linearGradient id="tlCornerWhite" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff1838" stop-opacity="0" />
+              <stop offset="25%" stop-color="#ff8fa1" stop-opacity="0.7" />
+              <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+              <stop offset="75%" stop-color="#ff8fa1" stop-opacity="0.7" />
+              <stop offset="100%" stop-color="#ff1838" stop-opacity="0" />
             </linearGradient>
 
-            <!-- Letter S Gradient: White specular highlight on upper curve to pure red -->
-            <linearGradient id="neonLetterShine" x1="15" y1="11" x2="28" y2="33" gradientUnits="userSpaceOnUse">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="20%" stop-color="#ffd5dc" />
-              <stop offset="48%" stop-color="#ff1e42" />
-              <stop offset="100%" stop-color="#c90022" />
+            <!-- Bottom-Right Corner Specular White Glint -->
+            <linearGradient id="brCornerWhite" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff1838" stop-opacity="0" />
+              <stop offset="25%" stop-color="#ff8fa1" stop-opacity="0.7" />
+              <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
+              <stop offset="75%" stop-color="#ff8fa1" stop-opacity="0.7" />
+              <stop offset="100%" stop-color="#ff1838" stop-opacity="0" />
             </linearGradient>
 
-            <!-- Soft Luminous Aura (sharp text, soft outer glow) -->
-            <filter id="softNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#ff1e42" flood-opacity="0.55" />
+            <!-- Letter 'S' Gradient: Upper white gleam to vivid red to lower white gleam -->
+            <linearGradient id="sLetterShine" x1="18%" y1="18%" x2="82%" y2="82%">
+              <stop offset="0%" stop-color="#ffffff" />
+              <stop offset="22%" stop-color="#ff7d94" />
+              <stop offset="42%" stop-color="#ff1438" />
+              <stop offset="78%" stop-color="#e5132b" />
+              <stop offset="92%" stop-color="#ffffff" />
+              <stop offset="100%" stop-color="#ff2642" />
+            </linearGradient>
+
+            <!-- Neon Glow for S Letter -->
+            <filter id="sNeonGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#ff1438" flood-opacity="0.85" />
             </filter>
           </defs>
 
-          <!-- Obsidian Black Squircle Card Base -->
-          <rect x="1.5" y="1.5" width="41" height="41" rx="12" fill="#06070a" />
+          <!-- Outer Soft Glow Shadow for Squircle -->
+          <rect x="6.5" y="6.5" width="87" height="87" rx="25" fill="none" stroke="#ff1838" stroke-width="6.5" opacity="0.35" filter="url(#neonBoxBloom)" />
 
-          <!-- Subtle Core Illumination -->
-          <circle cx="21" cy="19" r="10" fill="#ff1e42" opacity="0.16" />
+          <!-- Deep Black Squircle Body -->
+          <rect x="6.5" y="6.5" width="87" height="87" rx="25" fill="#020204" />
 
-          <!-- Squircle Border with White Specular Shine -->
-          <rect x="1.5" y="1.5" width="41" height="41" rx="12" fill="none" stroke="url(#neonRimShine)" stroke-width="2" filter="url(#softNeonGlow)" />
+          <!-- Center Ambient Volumetric Backlight -->
+          <circle cx="50" cy="50" r="38" fill="url(#centerGlow)" />
 
-          <!-- Letter 'S' with Upper White Shine & Vibrant Red Body -->
-          <text x="22" y="22.5" text-anchor="middle" dominant-baseline="central"
+          <!-- Pure Neon Red Outer Squircle Rim (Solid Glowing Red Everywhere) -->
+          <rect x="6.5" y="6.5" width="87" height="87" rx="25" fill="none" stroke="#ff1838" stroke-width="3.5" filter="url(#neonBoxBloom)" />
+
+          <!-- ONLY Top-Left Corner Specular White Highlight -->
+          <path d="M 6.5 33 A 25 25 0 0 1 33 6.5" fill="none" stroke="url(#tlCornerWhite)" stroke-width="3.5" stroke-linecap="round" />
+
+          <!-- ONLY Bottom-Right Corner Specular White Highlight -->
+          <path d="M 67 93.5 A 25 25 0 0 0 93.5 67" fill="none" stroke="url(#brCornerWhite)" stroke-width="3.5" stroke-linecap="round" />
+
+          <!-- Letter 'S' Illuminated Body with Neon Glow -->
+          <text x="50" y="52" text-anchor="middle" dominant-baseline="central"
                 font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                font-weight="900" font-size="26" letter-spacing="-0.02em"
-                fill="url(#neonLetterShine)" filter="url(#softNeonGlow)">S</text>
+                font-weight="900" font-size="62" letter-spacing="-0.03em"
+                fill="url(#sLetterShine)" filter="url(#sNeonGlow)">S</text>
         </svg>
       </div>
     </a>
@@ -190,7 +230,7 @@
 
         <!-- About Text & Bento Statistics -->
         <div class="portrait-content-side">
-          <span class="section-tag">ABOUT ME</span>
+          <div class="about-tag"><span class="about-tag-prefix">//</span> ABOUT ME</div>
           <h2 class="section-title">Bridging Clean Code with High-Impact Aesthetics.</h2>
           <p class="section-lead">
             Full-stack developer and creative video editor crafting fast, clean digital products and immersive visual
@@ -227,7 +267,7 @@
     <!-- 5. Skills & High-Tech Matrix Section -->
     <section class="stack-h" id="skills" aria-label="Skills and Technologies">
       <div class="stack-sticky">
-        <div><span class="section-tag">TECH STACK &amp; CAPABILITIES</span></div>
+        <div class="stack-header"><h2 class="stack-section-title"><span class="stack-tag-prefix">//</span> TECH STACK &amp; CAPABILITIES</h2></div>
         <div class="stack-wrap">
           <div class="stack-tabs" role="tablist"><button class="stack-tab active" type="button" role="tab"
               style="--c:var(--accent-cyan,#ff6a3d)"><span class="stack-tab-ic"><i
@@ -307,7 +347,7 @@
       <div class="horizontal-sticky-viewport">
         <!-- Top sticky sub-header -->
         <div class="horizontal-header-top">
-          <div class="section-tag">SELECTED PROJECTS</div>
+          <h2 class="work-section-title"><span class="work-tag-prefix">//</span> SELECTED PROJECTS</h2>
           <button type="button" class="all-proj-btn" data-open-projects>All Projects <i
               class="fa-solid fa-arrow-right"></i></button>
         </div>
@@ -556,8 +596,9 @@
 
     <!-- How I Work -->
     <section class="pr-s" id="process" aria-label="How I work">
-      <div class="pr-head"><span class="section-tag">HOW I WORK</span>
-        <h2 class="section-title" style="margin-top: 8px;">From Idea to Impact.</h2>
+      <div class="pr-head">
+        <div class="pr-tag"><span class="pr-tag-prefix">//</span> HOW I WORK</div>
+        <h2 class="section-title">From Idea to Impact.</h2>
         <p class="section-lead">The four steps behind every product I build.</p>
       </div>
       <div class="pr-track">
@@ -600,8 +641,9 @@
     <!-- Highlights -->
     <section class="hl-s" id="highlights" aria-label="Highlights">
       <div class="hl-stack" id="hlStack">
-        <div class="hl-s-head"><span class="section-tag">HIGHLIGHTS</span>
-          <h2 class="section-title" style="margin-top: 8px;">Beyond the Code.</h2>
+        <div class="hl-s-head">
+          <div class="hl-tag"><span class="hl-tag-prefix">//</span> HIGHLIGHTS</div>
+          <h2 class="section-title">Beyond the Code.</h2>
           <p class="section-lead">A few things I've done outside of just shipping projects.</p>
         </div>
         <article class="hl-sc" style="--c:var(--accent-cyan,#ff6a3d);--i:0">
@@ -679,9 +721,9 @@
     <!-- 7. Contact & Direct Message Box (Formspree Connected) -->
     <section class="ct" id="contact" aria-label="Contact Shafaq Irshad">
       <div class="ct-bg"><span class="ct-blob b1"></span><span class="ct-blob b2"></span></div>
-      <div class="ct-head"><span class="section-tag">GET IN TOUCH</span>
-        <h2 class="section-title">Let's Build Something Impactful Together.</h2><span class="ct-status"><i></i> Open to
-          projects, ideas &amp; collaborations</span>
+      <div class="ct-head">
+        <div class="ct-tag"><span class="ct-tag-prefix">//</span> GET IN TOUCH</div>
+        <h2 class="section-title">Let's Build Something Impactful Together.</h2>
       </div>
       <div class="ct-grid">
         <div class="ct-card ct-info">
@@ -700,7 +742,7 @@
                 class="fa-solid fa-arrow-right ct-arrow"></i></a><a class="ct-social" style="--c:#e4405f"
               href="https://www.instagram.com/shafaqqqqq._?igsh=MW94aTc0M256ZG96NQ==" target="_blank"
               rel="noreferrer"><span class="si"><i class="fa-brands fa-instagram"></i></span><span>Instagram</span><i
-                class="fa-solid fa-arrow-right ct-arrow"></i></a><a class="ct-social" style="--c:#e63946"
+                class="fa-solid fa-arrow-right ct-arrow"></i></a><a class="ct-social" style="--c:#e5132b"
               href="https://mail.google.com/mail/?view=cm&fs=1&to=shafaqueries@gmail.com&su=Project%20Inquiry%20-%20Shafaq%20Irshad"
               target="_blank" rel="noreferrer" id="socialEmailLink" title="Open Gmail Compose"><span class="si"><i
                   class="fa-solid fa-envelope"></i></span><span>Email</span><i
@@ -743,10 +785,10 @@
 
   <!-- Scripts -->
   <script src="./js/main.js?v=9"></script>
-  <script src="./js/preloader-visuals.js?v=1" defer></script>
-  <script src="./js/animations.js?v=3" defer></script>
+  <script src="./js/preloader-visuals.js?v=2" defer></script>
+  <script src="./js/animations.js?v=4" defer></script>
   <script src="./js/nav.js?v=1" defer></script>
-  <script src="./js/allprojects.js?v=8" defer></script>
+  <script src="./js/allprojects.js?v=9" defer></script>
   <script src="./js/process.js?v=1" defer></script>
   <script src="./js/stack.js?v=1" defer></script>
   <script src="./js/highlights.js?v=2" defer></script>

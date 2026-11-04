@@ -68,11 +68,11 @@
       for (const p of P) {
         p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
         const dx = p.x - m.x, dy = p.y - m.y; if (dx * dx + dy * dy < 14400) { p.x += dx * .03; p.y += dy * .03; }
-        x.fillStyle = 'rgba(230, 57, 70,.85)'; x.beginPath(); x.arc(p.x, p.y, 1.5, 0, 6.3); x.fill();
+        x.fillStyle = 'rgba(229, 19, 43,.85)'; x.beginPath(); x.arc(p.x, p.y, 1.5, 0, 6.3); x.fill();
       }
       for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) {
         const dx = P[i].x - P[j].x, dy = P[i].y - P[j].y, q = dx * dx + dy * dy;
-        if (q < 15000) { x.strokeStyle = `rgba(241, 245, 249,${(1 - q / 15000) * .3})`; x.beginPath(); x.moveTo(P[i].x, P[i].y); x.lineTo(P[j].x, P[j].y); x.stroke(); }
+        if (q < 15000) { x.strokeStyle = `rgba(244, 241, 236,${(1 - q / 15000) * .28})`; x.beginPath(); x.moveTo(P[i].x, P[i].y); x.lineTo(P[j].x, P[j].y); x.stroke(); }
       }
     })();
   }

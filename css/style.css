@@ -4,25 +4,25 @@
    ========================================================================== */
 
 :root {
-  --bg-primary: #0a0a0c;
-  --bg-secondary: #121216;
-  --bg-card: rgba(22, 22, 28, 0.75);
-  --bg-card-hover: rgba(30, 30, 40, 0.9);
-  --bg-glass: rgba(18, 18, 24, 0.7);
+  --bg-primary: #07070a;
+  --bg-secondary: #0e0e13;
+  --bg-card: rgba(14, 14, 19, 0.75);
+  --bg-card-hover: rgba(22, 22, 30, 0.9);
+  --bg-glass: rgba(14, 14, 19, 0.8);
   
-  --text-primary: #f4f4f6;
-  --text-secondary: #9da0a8;
-  --text-muted: #62656d;
+  --text-primary: #f4f1ec;
+  --text-secondary: #a7a6ad;
+  --text-muted: #6d6c75;
   
-  --accent-red: #e63946;
-  --accent-cyan: #e63946;
-  --accent-purple: #f1f5f9;
-  --accent-emerald: #ff6b6b;
-  --accent-amber: #f1f5f9;
+  --accent-red: #e5132b;
+  --accent-cyan: #ff3d5a;
+  --accent-purple: #f4f1ec;
+  --accent-emerald: #46e3a8;
+  --accent-amber: #d9b46a;
   
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-active: rgba(255, 255, 255, 0.22);
-  --border-glow: rgba(230, 57, 70, 0.3);
+  --border-active: rgba(255, 255, 255, 0.2);
+  --border-glow: rgba(229, 19, 43, 0.35);
   
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-display: 'Plus Jakarta Sans', 'Syne', -apple-system, sans-serif;
@@ -127,7 +127,7 @@ img, video {
   width: 550px;
   height: 550px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(230, 57, 70, 0.08) 0%, rgba(241, 245, 249, 0.03) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(229, 19, 43, 0.08) 0%, rgba(217, 180, 106, 0.04) 50%, transparent 70%);
   top: -100px;
   right: -100px;
   pointer-events: none;
@@ -703,7 +703,7 @@ img, video {
    Scroll-Reveal Portrait Section (Expanding Full Image)
    -------------------------------------------------------------------------- */
 .reveal-portrait-section {
-  padding: 24px 32px 36px;
+  padding: 24px 32px 18px;
   min-height: auto;
   display: flex;
   align-items: center;
@@ -1025,6 +1025,27 @@ img, video {
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
+}
+
+.work-section-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(0.95rem, 1.4vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #f4f1ec;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.work-tag-prefix {
+  color: #e5132b;
+  font-weight: 800;
+  opacity: .95;
+  text-shadow: 0 0 14px rgba(229, 19, 43, .55);
 }
 
 .horizontal-scroll-pill {

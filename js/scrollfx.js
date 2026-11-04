@@ -3,7 +3,7 @@
   if (matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   const $$ = s => [...document.querySelectorAll(s)];
   const clamp = v => Math.max(0, Math.min(1, v)), sm = v => v * v * (3 - 2 * v);
-  const inPinned = el => el.closest('.horizontal-sticky-viewport,.hl-sticky,.hl-s-head');
+  const inPinned = el => el.closest('.horizontal-sticky-viewport,.hl-sticky,.hl-s-head,.stack-sticky');
   const items = [];
   const SEL = '.section-tag,.section-title,.section-lead,.portrait-visual-card,.stat-box,.stack-tabs,.stack-stage,.ct-head,.ct-card';
   $$(SEL).filter(el => !inPinned(el) && !el.parentElement.closest(SEL)).forEach(el => items.push({ el, kind: 'box', cur: null, done: false }));
