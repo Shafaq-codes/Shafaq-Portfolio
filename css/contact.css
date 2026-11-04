@@ -1,0 +1,85 @@
+/* ===== Contact redesign ===== */
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes ctang{to{--ang:360deg}}
+.ct{position:relative;z-index:2;min-height:100vh;padding:130px 5vw 70px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.ct-bg{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.ct-blob{position:absolute;border-radius:50%;filter:blur(100px);opacity:.14;animation:ctblob 14s ease-in-out infinite alternate}
+.ct-blob.b1{width:420px;height:420px;left:-80px;top:20%;background:#e63946}
+.ct-blob.b2{width:460px;height:460px;right:-100px;bottom:0;background:rgba(241,245,249,0.6);animation-delay:-6s}
+@keyframes ctblob{from{translate:0 0;scale:1}to{translate:60px -40px;scale:1.2}}
+.ct-bigtext{position:absolute;top:50px;left:50%;translate:-50% 0;font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:clamp(5rem,19vw,17rem);line-height:.85;white-space:nowrap;pointer-events:none;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.1);background:linear-gradient(100deg,transparent 30%,rgba(230, 57, 70,.45),rgba(241, 245, 249,.45),transparent 70%) 0 0/250% 100% no-repeat;-webkit-background-clip:text;background-clip:text;animation:ctsweep 7s linear infinite;z-index:-1}
+@keyframes ctsweep{from{background-position:150% 0}to{background-position:-150% 0}}
+.ct-head{position:relative;margin-bottom:38px;max-width:900px}
+.ct-head .section-title{margin:8px 0 18px}
+.ct-status{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.06em;padding:8px 16px;border-radius:99px;border:1px solid rgba(141, 191, 156,.4);background:rgba(141, 191, 156,.08);color:#a8d4b5}
+.ct-status i{width:8px;height:8px;border-radius:50%;background:#8dbf9c;animation:ping 1.8s ease-out infinite}
+.ct-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:stretch;max-width:1280px;width:100%;margin:0 auto}
+.ct-card{position:relative;border-radius:26px;padding:38px;background:rgba(14,17,23,.75);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.09);transition:border-color .35s,box-shadow .35s,opacity .9s,translate .9s cubic-bezier(.2,.8,.2,1),filter .9s,transform .18s ease-out}
+.ct-info{display:flex;flex-direction:column;gap:22px}
+.ct-label{font-family:'JetBrains Mono',monospace;font-size:.78rem;letter-spacing:.18em;color:#e63946}
+.ct-mail{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding:22px 24px;border-radius:18px;border:1px dashed rgba(255,255,255,.22);background:rgba(255,255,255,.03);overflow:hidden;transition:.35s}
+.ct-mail::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(230, 57, 70,.18),rgba(241, 245, 249,.18));translate:-101% 0;transition:translate .5s cubic-bezier(.2,.8,.2,1)}
+.ct-mail:hover::before,.ct-mail:focus-visible::before{translate:0 0}
+.ct-mail:hover{border-color:#e63946;border-style:solid;box-shadow:0 0 34px rgba(230, 57, 70,.25)}
+.ct-mail-text,.ct-copy{position:relative}
+.ct-mail-text{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(1.05rem,2vw,1.5rem);word-break:break-all}
+#contact .copy-email-btn{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.1em;color:#e63946;padding:8px 14px;border-radius:99px;border:1px solid rgba(230, 57, 70,.5);background:rgba(230, 57, 70,.08);white-space:nowrap}
+.ct-note{color:var(--text-secondary,#9ca3af);line-height:1.7;font-size:.95rem}
+.ct-socials{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:auto}
+.ct-social{position:relative;display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.03);font-family:'JetBrains Mono',monospace;font-size:.88rem;overflow:hidden;transition:.35s cubic-bezier(.2,.8,.2,1)}
+.ct-social .si{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent);transition:.35s}
+.ct-social .ct-arrow{margin-left:auto;opacity:.4;rotate:-45deg;transition:.35s}
+.ct-social:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);box-shadow:0 14px 34px -14px color-mix(in srgb,var(--c) 70%,transparent)}
+.ct-social:hover .si{background:var(--c);color:#0b0d12;rotate:-10deg;scale:1.1}
+.ct-social:hover .ct-arrow{rotate:0deg;opacity:1;translate:4px 0}
+.ct-form{background:linear-gradient(#0e1117,#0e1117) padding-box,conic-gradient(from var(--ang),#e63946,#f1f5f9,#ff6b6b,#e63946) border-box;border:1.5px solid transparent;animation:ctang 7s linear infinite}
+.ct-form-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.ct-form-head h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem}
+.ct-plane{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#e63946;background:rgba(230, 57, 70,.12);animation:float 4s ease-in-out infinite}
+.ct-field{position:relative;margin-bottom:26px}
+.ct-input{width:100%;box-sizing:border-box;background:transparent;border:0;border-bottom:1.5px solid rgba(255,255,255,.18);padding:22px 2px 10px;color:inherit;font:inherit;font-size:1rem;outline:none;resize:none}
+.ct-area{min-height:130px}
+.ct-field label{position:absolute;left:2px;top:22px;color:var(--text-secondary,#9ca3af);pointer-events:none;transform-origin:0 0;transition:.3s cubic-bezier(.2,.8,.2,1)}
+.ct-input:focus+label,.ct-input:not(:placeholder-shown)+label{translate:0 -24px;scale:.78;color:#e63946}
+.ct-line{position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,#e63946,#f1f5f9,#ff6b6b);scale:0 1;transform-origin:0 50%;transition:scale .45s cubic-bezier(.2,.8,.2,1)}
+.ct-input:focus~.ct-line{scale:1 1}
+.ct-send{position:relative;width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:12px;padding:18px;border:0;border-radius:99px;font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem;color:#0b0d12;background:linear-gradient(90deg,#e63946,#f1f5f9,#e63946);background-size:200% 100%;transition:background-position .6s,box-shadow .4s}
+.ct-send:hover{background-position:100% 0;box-shadow:0 12px 40px -8px rgba(230, 57, 70,.7)}
+.ct-send::after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);skew:-20deg;animation:ctshine 3.2s ease-in-out infinite}
+@keyframes ctshine{60%,100%{left:140%}}
+.ct-send i{transition:.5s}
+.ct-send:hover i{translate:10px -8px;rotate:25deg}
+#contact .form-status-msg{margin-top:16px}
+@media (max-width:900px){.ct{padding:100px 20px 50px}.ct-grid{grid-template-columns:1fr}.ct-card{padding:26px 22px}.ct-socials{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.ct-socials{grid-template-columns:1fr}}
+
+/* ---- compact layout: whole contact page (title + both boxes) fits one screen ---- */
+.ct{padding:92px 5vw 20px;min-height:100vh;justify-content:flex-start}
+.ct-head{margin-bottom:clamp(14px,2.6vh,26px)}
+.ct-head .section-title{margin:6px 0 clamp(8px,1.6vh,14px);font-size:clamp(1.9rem,4.4vw,3.4rem)}
+.ct-status{padding:6px 14px;font-size:.72rem}
+.ct-grid{gap:20px}
+.ct-card{padding:clamp(18px,3.2vh,28px) clamp(18px,2.2vw,28px);border-radius:22px}
+.ct-info{gap:clamp(10px,1.8vh,16px)}
+.ct-mail{padding:clamp(12px,2vh,16px) 18px;border-radius:14px}
+.ct-mail-text{font-size:clamp(.95rem,1.7vw,1.25rem)}
+.ct-note{font-size:.85rem;line-height:1.55}
+.ct-socials{gap:10px}
+.ct-social{padding:clamp(9px,1.5vh,12px) 14px;border-radius:12px;font-size:.82rem}
+.ct-social .si{width:34px;height:34px;border-radius:10px;font-size:1rem}
+.ct-form-head{margin-bottom:clamp(10px,2vh,18px)}
+.ct-form-head h3{font-size:1.2rem}
+.ct-plane{width:38px;height:38px}
+.ct-field{margin-bottom:clamp(14px,2.4vh,20px)}
+.ct-input{padding:20px 2px 8px}
+.ct-area{min-height:clamp(70px,12vh,100px)}
+.ct-send{padding:clamp(12px,1.9vh,15px)}
+.ct-bigtext{top:70px}
+
+/* label styled like the 'Send a Direct Message' heading */
+.ct-info .ct-label{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:normal;text-transform:none;color:inherit;margin:0;line-height:1.3}
+
+/* smaller email copy box */
+.ct-mail{padding:8px 12px 8px 16px;border-radius:12px;gap:10px}
+.ct-mail-text{font-size:clamp(.82rem,1.25vw,.98rem)}
+#contact .copy-email-btn{padding:5px 11px;font-size:.66rem}

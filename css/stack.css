@@ -1,0 +1,49 @@
+/* ===== Tech stack: interactive tabs + tiles ===== */
+.stack-wrap{display:grid;grid-template-columns:minmax(260px,340px) 1fr;gap:28px;margin-top:28px;align-items:stretch}
+.stack-tabs{display:flex;flex-direction:column;gap:12px}
+.stack-tab{position:relative;display:flex;align-items:center;gap:14px;text-align:left;padding:16px 18px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:inherit;font:inherit;overflow:hidden;transition:.35s cubic-bezier(.2,.8,.2,1)}
+.stack-tab:hover{translate:6px 0;border-color:var(--c)}
+.stack-tab.active{background:color-mix(in srgb,var(--c) 12%,transparent);border-color:var(--c);box-shadow:0 0 30px color-mix(in srgb,var(--c) 25%,transparent);translate:10px 0}
+.stack-tab-ic{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;color:var(--c);background:color-mix(in srgb,var(--c) 15%,transparent);transition:.4s}
+.stack-tab.active .stack-tab-ic{background:var(--c);color:#0b0d12;rotate:-8deg;scale:1.08}
+.stack-tab-tx b{display:block;font-weight:700;font-size:1rem}
+.stack-tab-tx small{opacity:.6;font-size:.78rem;font-family:'JetBrains Mono',monospace}
+.stack-tab-bar{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--c);transform-origin:0 50%;scale:0 1}
+.stack-tab.active.auto .stack-tab-bar{animation:fillbar 5s linear forwards}
+@keyframes fillbar{to{scale:1 1}}
+.stack-stage{position:relative;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.025);padding:34px;min-height:430px;overflow:hidden}
+.stack-orbit{position:absolute;right:-120px;top:-120px;width:420px;height:420px;pointer-events:none;opacity:.5}
+.stack-orbit i{position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,.14);animation:spin 40s linear infinite}
+.stack-orbit i:nth-child(2){inset:50px;animation-duration:26s;animation-direction:reverse}
+.stack-orbit i:nth-child(3){inset:100px;animation-duration:18s}
+.stack-orbit i::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;border-radius:50%;background:#e63946;box-shadow:0 0 14px #e63946}
+.stack-panel{display:none;position:relative}
+.stack-panel.active{display:block}
+.stack-desc{max-width:520px;line-height:1.7;color:var(--text-secondary,#9ca3af);margin-bottom:26px;animation:up .6s both}
+.stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.stack-tile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px 12px;border-radius:18px;text-align:center;font-weight:600;font-size:.92rem;border:1px solid rgba(255,255,255,.09);background:linear-gradient(160deg,color-mix(in srgb,var(--c) 10%,transparent),rgba(255,255,255,.02));transition:.35s cubic-bezier(.2,.8,.2,1);animation:tilePop .6s calc(var(--i)*.08s) cubic-bezier(.2,1.2,.3,1) backwards}
+.stack-tile i{font-size:2.3rem;color:var(--c);filter:drop-shadow(0 0 10px color-mix(in srgb,var(--c) 55%,transparent));animation:float 4s calc(var(--i)*.4s) ease-in-out infinite}
+.stack-tile::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 50% 0,color-mix(in srgb,var(--c) 35%,transparent),transparent 65%);opacity:0;transition:.35s}
+.stack-tile:hover{translate:0 -8px;scale:1.05;border-color:var(--c);box-shadow:0 18px 40px -12px color-mix(in srgb,var(--c) 55%,transparent)}
+.stack-tile:hover::before{opacity:1}
+.stack-tile:hover i{animation-duration:.8s;scale:1.2}
+@keyframes tilePop{from{opacity:0;translate:0 30px;scale:.7;rotate:-6deg}to{opacity:1;translate:0 0;scale:1;rotate:0deg}}
+@media (max-width:860px){.stack-wrap{grid-template-columns:1fr}.stack-tabs{flex-direction:row;overflow-x:auto;padding-bottom:6px}.stack-tab{flex:none;min-width:220px}.stack-tab.active,.stack-tab:hover{translate:0 0}.stack-stage{padding:22px;min-height:0}}
+
+@keyframes spin{to{rotate:360deg}}
+
+/* ===== scroll-driven (pinned) stack ===== */
+.stack-h{position:relative;height:430vh;z-index:2}
+.stack-sticky{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 5vw 36px;box-sizing:border-box}
+.stack-sticky > div:first-child{width:100%;max-width:1280px;margin-inline:auto;margin-bottom:12px}
+.stack-sticky .stack-wrap{margin-top:0;width:100%;max-width:1280px;margin-inline:auto}
+.stack-stage{min-height:0;padding:clamp(18px,3.5vh,34px)}
+.stack-desc{margin-bottom:clamp(12px,2.5vh,26px)}
+.stack-tile{padding:clamp(14px,3vh,26px) 12px;gap:clamp(8px,1.6vh,14px)}
+.stack-tile i{font-size:clamp(1.7rem,4.2vh,2.3rem)}
+.stack-tab{cursor:pointer}
+.stack-tab-bar{display:none}
+.stack-tab.done:not(.active){border-color:color-mix(in srgb,var(--c) 55%,transparent);background:color-mix(in srgb,var(--c) 7%,transparent)}
+.stack-tab.done .stack-tab-ic{background:var(--c);color:#0b0d12}
+.stack-tab.done .stack-tab-bar{scale:1 1}
+@media (max-width:860px){.stack-h{height:400vh}.stack-sticky{padding:70px 4vw 14px}.stack-grid{grid-template-columns:repeat(3,1fr);gap:10px}.stack-tile{padding:12px 6px;font-size:.74rem}.stack-desc{font-size:.85rem}.stack-tab{min-width:180px;padding:10px 12px}

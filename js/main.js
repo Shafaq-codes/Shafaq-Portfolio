@@ -31,25 +31,25 @@ function initPreloader() {
   const frames = [
     {
       word: 'PLAN',
-      bg: 'radial-gradient(circle at center, #1a237e 0%, #000 85%), linear-gradient(rgba(0,242,254,0.1) 2px, transparent 2px)'
+      bg: 'radial-gradient(circle at center, #3a1a10 0%, #000 85%), linear-gradient(rgba(255, 106, 61,0.1) 2px, transparent 2px)'
     },
     {
       word: 'BUILD',
-      bg: 'radial-gradient(circle at center, #2e1065 0%, #000 85%), linear-gradient(90deg, rgba(121,40,202,0.15) 1px, transparent 1px)'
+      bg: 'radial-gradient(circle at center, #3a2a10 0%, #000 85%), linear-gradient(90deg, rgba(240, 182, 107,0.15) 1px, transparent 1px)'
     },
     {
       word: 'SHIP',
-      bg: 'radial-gradient(circle at center, #064e3b 0%, #000 85%), radial-gradient(circle, rgba(16,185,129,0.2) 10%, transparent 60%)'
+      bg: 'radial-gradient(circle at center, #14301f 0%, #000 85%), radial-gradient(circle, rgba(141, 191, 156,0.2) 10%, transparent 60%)'
     },
     {
       word: 'SCALE',
-      bg: 'radial-gradient(circle at center, #831843 0%, #000 85%), linear-gradient(45deg, rgba(255,51,68,0.2) 25%, transparent 25%)'
+      bg: 'radial-gradient(circle at center, #4a1a14 0%, #000 85%), linear-gradient(45deg, rgba(255, 90, 60,0.2) 25%, transparent 25%)'
     }
   ];
 
   let currentIndex = 0;
   let isSkipped = false;
-  const frameDuration = 480; // ms per word
+  const frameDuration = 1000; // ms per word (longer so each diagram can play)
 
   function showFrame(index) {
     if (isSkipped) return;

@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="14" fill="#0a0a0e"/>
-  <text x="9" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Space Grotesk', Roboto, sans-serif" font-weight="900" font-size="34" fill="#ffffff" letter-spacing="-0.5">SI</text>
-  <rect x="47" y="35" width="8.5" height="8.5" rx="1.5" fill="#ff3344"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a3d"/><stop offset=".55" stop-color="#f0b66b"/><stop offset="1" stop-color="#d9573b"/></linearGradient></defs><circle cx="32" cy="32" r="29" fill="#0b0d14" stroke="url(#g)" stroke-width="5"/><text x="32" y="43" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="900" font-size="32" fill="url(#g)">S</text></svg>
