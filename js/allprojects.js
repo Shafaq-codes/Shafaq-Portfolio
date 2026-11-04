@@ -227,7 +227,7 @@
     <div class="ap-glow ap-g1"></div><div class="ap-glow ap-g2"></div>
     <header class="ap-top"><button type="button" class="ap-back"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</button><span class="ap-count">${pad(PROJECTS.length)} PROJECTS</span></header>
     <div class="ap-inner">
-      <p class="ap-tag">// ALL PROJECTS</p>
+      <p class="ap-tag"><span class="ap-tag-prefix">//</span> ALL PROJECTS</p>
       <h1 class="ap-title">Everything I've Built.</h1>
       <div class="ap-grid">${PROJECTS.map((p, i) => `
         <article class="ap-card" data-cats="${p.cats.join(' ')}"${p.link ? ` data-href="${esc(p.link)}"` : ''} style="--c:${COLORS[i % COLORS.length]};--i:${i}">

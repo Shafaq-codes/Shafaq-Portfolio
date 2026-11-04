@@ -16,7 +16,8 @@
 .ap-back:hover{box-shadow:0 0 22px rgba(229, 19, 43,.45)}.ap-back:hover i{translate:-4px 0}.ap-back i{transition:.3s;color:#ff3d5a}
 .ap-count{font:700 .72rem 'JetBrains Mono',monospace;letter-spacing:.2em;color:rgba(244,241,236,.5)}
 .ap-inner{position:relative;max-width:1180px;margin:0 auto;padding:46px 5vw 80px}
-.ap-tag{font:700 .78rem 'JetBrains Mono',monospace;letter-spacing:.2em;color:#e5132b;margin-bottom:10px}
+.ap-tag{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:clamp(0.95rem,1.4vw,1.25rem);font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#f4f1ec;line-height:1.2;margin-bottom:12px}
+.ap-tag-prefix{color:#e5132b;font-weight:800;opacity:.95;text-shadow:0 0 14px rgba(229,19,43,.55)}
 .ap-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.2rem,6vw,4.2rem);line-height:1.2;padding-bottom:10px;margin:0 0 34px;background:linear-gradient(90deg,#f4f1ec,#ffd5dc 55%,#f4f1ec);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .ap-lead{max-width:560px;color:#a7a6ad;line-height:1.7;margin-bottom:26px}
 .ap-filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
