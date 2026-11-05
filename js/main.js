@@ -261,7 +261,7 @@ function initContactForm() {
     statusMsg.textContent = '';
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/shafaqueries@gmail.com', {
+      const response = await fetch('https://formspree.io/f/xqewbewd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -269,29 +269,23 @@ function initContactForm() {
         },
         body: JSON.stringify({
           name: name,
-          email: 'visitor@portfolio.com',
+          _replyto: 'visitor@portfolio.com',
           message: message,
-          _subject: `New Portfolio Message from ${name}`,
-          _captcha: 'false',
-          _template: 'table'
+          _subject: `New Portfolio Message from ${name}`
         })
       });
 
       const data = await response.json();
 
-      if (response.ok && (data.success === 'true' || data.success === true)) {
+      if (response.ok && (data.ok === true || data.success === true)) {
         statusMsg.className = 'form-status-msg success';
-        statusMsg.textContent = `✓ Thank you ${name}! Your message has been delivered directly to Shafaq's email.`;
+        statusMsg.textContent = `✓ Thank you ${name}! Your message has been sent directly to Shafaq's email.`;
         form.reset();
         setTimeout(() => {
           statusMsg.textContent = '';
         }, 7000);
-      } else if (data.message && data.message.includes('Activation')) {
-        statusMsg.className = 'form-status-msg success';
-        statusMsg.textContent = `✓ Sent! Please check shafaqueries@gmail.com to click the 1-time "Activate Form" button.`;
-        form.reset();
       } else {
-        throw new Error(data.message || 'Submission error');
+        throw new Error(data.error || (data.errors && data.errors[0]?.message) || 'Submission error');
       }
     } catch (err) {
       console.error('Contact Form Error:', err);
