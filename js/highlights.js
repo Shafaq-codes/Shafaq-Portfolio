@@ -5,8 +5,8 @@
 
   const updateHlh = () => {
     if (head && stack) {
-      const headTop = parseFloat(getComputedStyle(head).top) || 68;
-      const needed = Math.ceil(headTop + head.offsetHeight + 24);
+      const headTop = parseFloat(getComputedStyle(head).top) || 64;
+      const needed = Math.ceil(headTop + head.offsetHeight + 16);
       stack.style.setProperty('--hlh', `${needed}px`);
     }
   };

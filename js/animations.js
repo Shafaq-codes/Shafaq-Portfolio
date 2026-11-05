@@ -77,13 +77,12 @@
     })();
   }
 
-  /* scroll progress, smart header, portrait parallax */
-  const bar = mk('div', 'm-prog'), hd = $1('.top-editorial-bar'), pi = $1('.portrait-visual-card img');
+  /* smart header, portrait parallax */
+  const hd = $1('.top-editorial-bar'), pi = $1('.portrait-visual-card img');
   if (pi) pi.style.scale = '1.12';
   let ly = 0, tk = 0;
   const sc = () => {
-    tk = 0; const y = scrollY, mx = h.scrollHeight - innerHeight;
-    bar.style.scale = `${mx > 0 ? y / mx : 0} 1`;
+    tk = 0; const y = scrollY;
     if (hd) { hd.classList.toggle('m-scrolled', y > 40); hd.style.translate = (y > ly && y > 300) ? '0 -110%' : '0 0'; }
     ly = y;
     if (pi) { const r = pi.parentElement.getBoundingClientRect(); if (r.bottom > 0 && r.top < innerHeight) pi.style.translate = `0 ${((r.top + r.height / 2 - innerHeight / 2) * -.06).toFixed(1)}px`; }
