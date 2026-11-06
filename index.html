@@ -37,11 +37,15 @@
   <link rel="stylesheet" href="./css/highlights.css?v=7" />
   <link rel="stylesheet" href="./css/contact.css?v=4" />
   <link rel="stylesheet" href="./css/preloader-visuals.css?v=2" />
-  <link rel="stylesheet" href="./css/nav.css?v=8" />
+  <link rel="stylesheet" href="./css/nav.css?v=11" />
   <link rel="stylesheet" href="./css/allprojects.css?v=7" />
   <link rel="stylesheet" href="./css/process.css?v=5" />
   <link rel="stylesheet" href="./css/about.css?v=4" />
-  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg?v=2" />
+  <link rel="icon" type="image/x-icon" href="./favicon.ico?v=5" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png?v=5" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png?v=5" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg?v=5" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=5" />
 </head>
 
 <body class="preloader-active">
@@ -83,85 +87,7 @@
   <header class="top-editorial-bar">
     <a href="#home" class="brand-logo-link" aria-label="Shafaq Irshad — Home">
       <div class="brand-emblem">
-        <svg class="brand-emblem-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <!-- Neon Outer Aura Filter for Red Box -->
-            <filter id="neonBoxBloom" x="-35%" y="-35%" width="170%" height="170%">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
-              <feGaussianBlur in="SourceGraphic" stdDeviation="6.5" result="blur2" />
-              <feColorMatrix in="blur2" type="matrix" values="1 0 0 0 1  0 0 0 0 0.08  0 0 0 0 0.18  0 0 0 0.9 0" result="bloom" />
-              <feMerge>
-                <feMergeNode in="bloom" />
-                <feMergeNode in="blur1" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-
-            <!-- Soft Backlight inside Box -->
-            <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#ff1939" stop-opacity="0.6" />
-              <stop offset="55%" stop-color="#e5132b" stop-opacity="0.22" />
-              <stop offset="100%" stop-color="#020204" stop-opacity="0" />
-            </radialGradient>
-
-            <!-- Top-Left Corner Specular White Glint -->
-            <linearGradient id="tlCornerWhite" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ff1838" stop-opacity="0" />
-              <stop offset="25%" stop-color="#ff8fa1" stop-opacity="0.7" />
-              <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
-              <stop offset="75%" stop-color="#ff8fa1" stop-opacity="0.7" />
-              <stop offset="100%" stop-color="#ff1838" stop-opacity="0" />
-            </linearGradient>
-
-            <!-- Bottom-Right Corner Specular White Glint -->
-            <linearGradient id="brCornerWhite" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ff1838" stop-opacity="0" />
-              <stop offset="25%" stop-color="#ff8fa1" stop-opacity="0.7" />
-              <stop offset="50%" stop-color="#ffffff" stop-opacity="1" />
-              <stop offset="75%" stop-color="#ff8fa1" stop-opacity="0.7" />
-              <stop offset="100%" stop-color="#ff1838" stop-opacity="0" />
-            </linearGradient>
-
-            <!-- Letter 'S' Gradient: Upper white gleam to vivid red to lower white gleam -->
-            <linearGradient id="sLetterShine" x1="18%" y1="18%" x2="82%" y2="82%">
-              <stop offset="0%" stop-color="#ffffff" />
-              <stop offset="22%" stop-color="#ff7d94" />
-              <stop offset="42%" stop-color="#ff1438" />
-              <stop offset="78%" stop-color="#e5132b" />
-              <stop offset="92%" stop-color="#ffffff" />
-              <stop offset="100%" stop-color="#ff2642" />
-            </linearGradient>
-
-            <!-- Neon Glow for S Letter -->
-            <filter id="sNeonGlow" x="-30%" y="-30%" width="160%" height="160%">
-              <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#ff1438" flood-opacity="0.85" />
-            </filter>
-          </defs>
-
-          <!-- Outer Soft Glow Shadow for Squircle -->
-          <rect x="6.5" y="6.5" width="87" height="87" rx="25" fill="none" stroke="#ff1838" stroke-width="6.5" opacity="0.35" filter="url(#neonBoxBloom)" />
-
-          <!-- Deep Black Squircle Body -->
-          <rect x="6.5" y="6.5" width="87" height="87" rx="25" fill="#020204" />
-
-          <!-- Center Ambient Volumetric Backlight -->
-          <circle cx="50" cy="50" r="38" fill="url(#centerGlow)" />
-
-          <!-- Pure Neon Red Outer Squircle Rim (Solid Glowing Red Everywhere) -->
-          <rect x="6.5" y="6.5" width="87" height="87" rx="25" fill="none" stroke="#ff1838" stroke-width="3.5" filter="url(#neonBoxBloom)" />
-
-          <!-- ONLY Top-Left Corner Specular White Highlight -->
-          <path d="M 6.5 33 A 25 25 0 0 1 33 6.5" fill="none" stroke="url(#tlCornerWhite)" stroke-width="3.5" stroke-linecap="round" />
-
-          <!-- ONLY Bottom-Right Corner Specular White Highlight -->
-          <path d="M 67 93.5 A 25 25 0 0 0 93.5 67" fill="none" stroke="url(#brCornerWhite)" stroke-width="3.5" stroke-linecap="round" />
-
-          <!-- Letter 'S' Illuminated Body with Neon Glow -->
-          <text x="50" y="52" text-anchor="middle" dominant-baseline="central"
-                font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
-                font-weight="900" font-size="62" letter-spacing="-0.03em"
-                fill="url(#sLetterShine)" filter="url(#sNeonGlow)">S</text>
-        </svg>
+        <img src="./assets/logo.png?v=5" alt="Shafaq Irshad Logo" class="brand-emblem-img" width="44" height="44" />
       </div>
     </a>
 
