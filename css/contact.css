@@ -34,7 +34,7 @@
 .ct-social:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);box-shadow:0 14px 34px -14px color-mix(in srgb,var(--c) 70%,transparent)}
 .ct-social:hover .si{background:var(--c);color:#07070a;rotate:-10deg;scale:1.1}
 .ct-social:hover .ct-arrow{rotate:0deg;opacity:1;translate:4px 0}
-.ct-form{background:linear-gradient(#0e0e13,#0e0e13) padding-box,conic-gradient(from var(--ang),#e5132b,#ff3d5a,#d9b46a,#e5132b) border-box;border:1.5px solid transparent;animation:ctang 7s linear infinite}
+.ct-form{background:rgba(14,14,19,.82);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.09)}
 .ct-form-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
 .ct-form-head h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.4rem}
 .ct-plane{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:#ff3d5a;background:rgba(229, 19, 43,.12);animation:float 4s ease-in-out infinite}

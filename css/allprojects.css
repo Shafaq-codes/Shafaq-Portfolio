@@ -34,7 +34,7 @@
 .ap-card:hover .ap-ic{background:var(--c);color:#07070a;rotate:-8deg;scale:1.08}
 .ap-name{font:800 1.25rem 'Plus Jakarta Sans',sans-serif;letter-spacing:.02em;margin:4px 0 0}
 .ap-sub{font-style:italic;color:var(--c);font-size:.9rem;margin:0}
-.ap-body{color:#a7a6ad;font-size:.9rem;line-height:1.65;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.ap-body{display:none}
 .ap-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
 .ap-tags span{font:600 .68rem 'JetBrains Mono',monospace;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
 .ap-link{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:9px;padding:10px 16px;border-radius:99px;font:700 .74rem 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:#07070a;background:var(--c);transition:.3s}

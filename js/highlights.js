@@ -23,14 +23,22 @@
       c.style.scale = (1 - .045 * sum).toFixed(4);
       c.style.filter = sum > .01 ? `brightness(${(1 - .16 * sum).toFixed(3)})` : '';
     });
-    /* keep the section title pinned while the cards stack; fade it out once all cards are done and the stack starts leaving */
+    /* keep the section title pinned while the cards stack;
+       once the last card arrives at its resting position (first screenshot) and begins moving up,
+       the title scrolls up at the EXACT same rate, so the card NEVER overlaps or goes behind the title! */
     if (head && stack) {
-      const last = cards[cards.length - 1], padB = parseFloat(getComputedStyle(stack).paddingBottom) || 0;
-      const rel = (stack.getBoundingClientRect().bottom - padB) - (topOf(cards.length - 1) + last.offsetHeight);
-      const op = Math.max(0, Math.min(1, rel / 110));
-      head.style.opacity = op >= .999 ? '' : op.toFixed(3);
-      head.style.translate = op >= .999 ? '' : `0 ${(-(1 - op) * 24).toFixed(1)}px`;
-      head.style.visibility = op <= .01 ? 'hidden' : '';
+      const last = cards[cards.length - 1];
+      const lastStickyTop = topOf(cards.length - 1);
+      const lastCurrentTop = last.getBoundingClientRect().top;
+      if (lastCurrentTop < lastStickyTop - 0.5) {
+        const dy = lastStickyTop - lastCurrentTop;
+        head.style.translate = `0 ${(-dy).toFixed(1)}px`;
+        const op = Math.max(0, Math.min(1, 1 - dy / 200));
+        head.style.opacity = op >= .999 ? '' : op.toFixed(3);
+      } else {
+        head.style.translate = '';
+        head.style.opacity = '';
+      }
     }
   };
   addEventListener('scroll', () => { tk || (tk = requestAnimationFrame(run)); }, { passive: true });

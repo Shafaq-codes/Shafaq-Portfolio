@@ -8,7 +8,7 @@
 .pr-head .section-lead{font-size:1.05rem;color:#a7a6ad;margin:0;line-height:1.5}
 .pr-track{position:relative;max-width:1180px;width:100%;margin:0 auto}
 .pr-line{position:absolute;top:32px;left:12.5%;right:12.5%;height:3px;border-radius:3px;background:rgba(255,255,255,.08)}
-.pr-fill{position:absolute;inset:0;border-radius:inherit;transform-origin:0 50%;scale:var(--p,0) 1;background:linear-gradient(90deg,#e5132b,#ff3d5a,#d9b46a,#e5132b);box-shadow:0 0 16px rgba(229,19,43,.65);will-change:scale}
+.pr-fill{position:absolute;inset:0;border-radius:inherit;transform-origin:0 50%;scale:var(--p,0) 1;background:linear-gradient(90deg,#e63946 0%,#f1f5f9 33%,#38bdf8 66%,#10b981 100%);box-shadow:0 0 16px rgba(56,189,248,.4);will-change:scale}
 .pr-steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .pr-step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 6px;opacity:.16;translate:0 22px;filter:grayscale(.7);pointer-events:none;transition:opacity .5s cubic-bezier(.2,.8,.2,1),translate .5s cubic-bezier(.2,.8,.2,1),filter .5s}
 .pr-step.on{opacity:1;translate:0 0;filter:none;pointer-events:auto}

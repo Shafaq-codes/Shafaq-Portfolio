@@ -235,7 +235,6 @@
           <div class="ap-ic${p.logo ? ' logo' : ''}">${p.logo ? `<img src="${esc(p.logo)}" alt="${esc(p.title)} logo" width="52" height="52">` : `<i class="${esc(p.icon)}"></i>`}</div>
           <h3 class="ap-name">${esc(p.title)}</h3>
           <p class="ap-sub">${esc(p.sub)}</p>
-          <p class="ap-body">${esc(p.body)}</p>
           <div class="ap-tags">${p.tags.map(t => `<span>${esc(t)}</span>`).join('')}</div>
           ${p.link ? `<a class="ap-link" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">View Project <i class="fa-solid fa-arrow-up-right-from-square"></i></a>` : `<span class="ap-link off"><i class="fa-regular fa-clock"></i> Link coming soon</span>`}
         </article>`).join('')}</div>
